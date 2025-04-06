@@ -1,0 +1,176 @@
+/* Optional: modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global body styling */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f8fb;
+  color: #1a2b50;
+  line-height: 1.6;
+  overflow-x: hidden; /* prevent horizontal scroll from off-canvas */
+}
+
+/* Reusable container class */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.site-header {
+  background-color: #ffffff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Updated logo size */
+.logo {
+  height: 80px;  /* Increased from 50px to 80px */
+  display: block;
+}
+
+/* Main hero section */
+.site-main {
+  margin-top: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a2b50;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: #5f6f8d;
+}
+
+/* CTA button */
+.cta-button {
+  background-color: #22a699;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1b8d82;
+}
+
+/* Off-canvas contact panel */
+.contact-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  transform: translateX(110%); /* hide off-screen to the right */
+  transition: transform 0.4s ease;
+  z-index: 999;
+}
+
+/* When the panel is open, bring it into view */
+.contact-panel.open {
+  transform: translateX(0);
+}
+
+/* Close button inside the panel */
+.close-panel {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.close-panel:hover {
+  color: #333;
+}
+
+/* Contact form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.contact-form h2 {
+  font-size: 1.5rem;
+  color: #1a2b50;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #22a699;
+}
+
+.submit-button {
+  background-color: #22a699;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #1b8d82;
+}

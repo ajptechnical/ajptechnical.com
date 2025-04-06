@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJP Technical</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <img src="ajptechnical.png" alt="AJP Technical Logo" class="logo"/>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero container">
+      <h1>Precision Technical Solutions, Expertly Delivered</h1>
+      <p>
+        At AJP Technical, we specialize in solving complex technical challenges with clarity and innovation. Let's turn your toughest problems into opportunities.
+      </p>
+      <button class="cta-button" id="contactToggle">
+        Discuss your project
+      </button>
+    </section>
+  </main>
+
+  <aside class="contact-panel" id="contactPanel">
+    <button class="close-panel" id="closePanel">&times;</button>
+
+    <form class="contact-form">
+      <h2>Tell us about your challenge</h2>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
