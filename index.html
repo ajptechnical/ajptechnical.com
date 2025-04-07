@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="container header-content">
-      <img src="ajptechnical.png" alt="AJP Technical Logo" class="logo"/>
+      <img src="ajpt_logo_2.png" alt="AJP Technical Logo" class="logo"/>
     </div>
   </header>
 
@@ -28,7 +28,7 @@
   <aside class="contact-panel" id="contactPanel">
     <button class="close-panel" id="closePanel">&times;</button>
 
-    <form class="contact-form">
+    <form class="contact-form" id="contactForm">
       <h2>Tell us about your challenge</h2>
 
       <div class="form-group">
@@ -48,16 +48,23 @@
 
       <button type="submit" class="submit-button">Submit</button>
     </form>
+
+    <!-- Confirmation message container (initially hidden) -->
+    <div class="confirmation-message" id="confirmationMessage" style="display: none;">
+      <h2>Thank you!</h2>
+      <p>Your message has been sent successfully. We will be in touch soon.</p>
+    </div>
   </aside>
+
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-content">
       <p>&copy; 2025 AJP Technical. All rights reserved.</p>
-      <p><a href="mailto:hello@ajptechnical.com">hello@ajptechnical.com</a></p>
+      <p><a href="mailto:info@ajptechnical.com">info@ajptechnical.com</a></p>
     </div>
   </footer>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
