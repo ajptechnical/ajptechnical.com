@@ -4,13 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AJP Technical</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+  <div class="top-stripe"></div>
   <header class="site-header">
     <div class="container header-content">
-      <img src="ajpt_logo_2.png" alt="AJP Technical Logo" class="logo"/>
+      <img src="newajp2.png" alt="AJP Technical Logo" class="logo"/>
+      <span class="brand-wordmark">AJP Technical</span>
     </div>
+    <div class="hero-stripe"></div>
   </header>
 
   <main class="site-main">
@@ -23,13 +27,37 @@
         Discuss your project
       </button>
     </section>
+
+    <section class="client-carousel" aria-label="Customer logos">
+      <div class="carousel-inner">
+        <img src="custs/ageconcern_white.svg" alt="Age Concern logo"/>
+        <img src="custs/nhs_white.svg" alt="NHS logo"/>
+        <img src="custs/Sony_Music.svg" alt="Sony Music logo"/>
+        <img src="custs/ch4.svg" alt="Channel 4 logo"/>
+        <img src="custs/subway.svg" alt="Subway logo"/>
+        <img src="custs/mtv.svg" alt="MTV logo"/>
+        <img src="custs/bottomline.svg" alt="Bottomline logo"/>
+        <img src="custs/wokringlinks.svg" alt="Working Links logo"/>
+        <img src="custs/xpo.svg" alt="XPO Logistics logo"/>
+        <img src="custs/ageconcern_white.svg" alt="" aria-hidden="true"/>
+        <img src="custs/nhs_white.svg" alt="" aria-hidden="true"/>
+        <img src="custs/Sony_Music.svg" alt="" aria-hidden="true"/>
+        <img src="custs/ch4.svg" alt="" aria-hidden="true"/>
+        <img src="custs/subway.svg" alt="" aria-hidden="true"/>
+        <img src="custs/mtv.svg" alt="" aria-hidden="true"/>
+        <img src="custs/bottomline.svg" alt="" aria-hidden="true"/>
+        <img src="custs/wokringlinks.svg" alt="" aria-hidden="true"/>
+        <img src="custs/xpo.svg" alt="" aria-hidden="true"/>
+      </div>
+    </section>
   </main>
 
   <aside class="contact-panel" id="contactPanel">
     <button class="close-panel" id="closePanel">&times;</button>
 
-    <form class="contact-form" id="contactForm">
-      <h2>Tell us about your challenge</h2>
+    <form class="contact-form" id="contactForm" action="your-submit-endpoint" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LcAfQ4rAAAAAPy7xx7j-XVXGDygqQuT_9aeRy-Z"></div>
+      <h2>Get in touch!</h2>
 
       <div class="form-group">
         <label for="name">Name</label>

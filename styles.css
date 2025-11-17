@@ -1,6 +1,11 @@
 /* Optional: modern Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
+:root {
+  --brand-blue: #949fff;
+  --brand-blue-dark: #838bff;
+}
+
 /* Basic reset */
 * {
   margin: 0;
@@ -11,8 +16,8 @@
 /* Global body styling */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f4f8fb;
-  color: #1a2b50;
+  background-color: var(--brand-blue);
+  color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden; /* prevent horizontal scroll from off-canvas */
 }
@@ -30,15 +35,24 @@ html, body {
 }
 
 /* Header */
+.top-stripe {
+  height: 8px;
+  width: 100%;
+  background-color: var(--brand-blue-dark);
+}
+
 .site-header {
   background-color: #ffffff;
-  padding: 1rem 0;
+  padding: 0.4rem 0;
   border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .header-content {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
 }
 
 /* Updated logo size */
@@ -47,35 +61,90 @@ html, body {
   display: block;
 }
 
+.brand-wordmark {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8c92a3;
+  font-weight: 600;
+}
+
 /* Main hero section */
 .site-main {
-  margin-top: 2rem;
+  margin-top: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertically center hero if short */
+  background-color: var(--brand-blue);
+}
+.hero-stripe {
+  height: 8px;
+  width: 100%;
+  background-color: #fff5b1;
 }
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem 4rem;
+  color: #ffffff;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #1a2b50;
+  color: #ffffff;
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto 2rem auto;
-  color: #5f6f8d;
+  color: #f2f4ff;
+}
+
+.client-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 1.25rem 0;
+  margin: 0.5rem auto 0;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+  max-width: 760px;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: logo-scroll 30s linear infinite;
+  width: max-content;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.carousel-inner img {
+  height: 48px;
+  flex-shrink: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translateX(-15%);
+  }
+  to {
+    transform: translateX(-45%);
+  }
 }
 
 /* CTA button */
 .cta-button {
-  background-color: #22a699;
+  background-color: var(--brand-blue);
   color: #ffffff;
   border: none;
   padding: 0.9rem 2rem;
@@ -83,10 +152,11 @@ html, body {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .cta-button:hover {
-  background-color: #1b8d82;
+  background-color: var(--brand-blue-dark);
 }
 
 /* Off-canvas contact panel */
@@ -97,12 +167,13 @@ html, body {
   width: 100%;
   max-width: 420px;
   height: 100vh;
-  background-color: #fff;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6ff 100%);
   box-shadow: -4px 0 20px rgba(0,0,0,0.1);
   padding: 2rem;
   transform: translateX(110%); /* hide off-screen to the right */
   transition: transform 0.4s ease;
   z-index: 999;
+  color: #1a2b50;
 }
 
 /* When the panel is open, bring it into view */
@@ -133,11 +204,16 @@ html, body {
   flex-direction: column;
   gap: 1.2rem;
   margin-top: 2rem;
+  background: #f9f9ff;
+  border: 1px solid rgba(20,20,40,0.08);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 15px 30px rgba(17, 24, 39, 0.08);
 }
 
 .contact-form h2 {
   font-size: 1.5rem;
-  color: #1a2b50;
+  color: #111a3a;
   margin-bottom: 0.5rem;
 }
 
@@ -153,33 +229,42 @@ html, body {
 
 .form-group input,
 .form-group textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(16,31,75,0.15);
+  border-radius: 10px;
   font-size: 1rem;
-  background-color: #f9fafb;
-  transition: border 0.3s ease;
+  background-color: #ffffff;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #22a699;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(148,159,255,0.25);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
 }
 
 .submit-button {
-  background-color: #22a699;
-  color: #fff;
-  border: none;
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
   padding: 0.8rem;
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 10px 20px rgba(148,159,255,0.35);
 }
 
 .submit-button:hover {
-  background-color: #1b8d82;
+  background-color: var(--brand-blue-dark);
 }
 
 .site-footer {
