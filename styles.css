@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --brand-blue: #949fff;
-  --brand-blue-dark: #838bff;
+  --brand-blue: #151d80;
+  --brand-blue-dark: #0f1360;
 }
 
 /* Basic reset */
@@ -77,11 +77,6 @@ html, body {
   flex-direction: column;
   justify-content: center; /* vertically center hero if short */
   background-color: var(--brand-blue);
-}
-.hero-stripe {
-  height: 8px;
-  width: 100%;
-  background-color: #fff5b1;
 }
 .hero {
   text-align: center;
