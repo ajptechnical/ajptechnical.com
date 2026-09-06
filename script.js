@@ -3,6 +3,11 @@ const contactToggle = document.getElementById('contactToggle');
 const contactPanel = document.getElementById('contactPanel');
 const closePanel = document.getElementById('closePanel');
 
+const copyrightYear = document.getElementById('copyrightYear');
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
+
 // Open the panel
 contactToggle.addEventListener('click', () => {
   contactPanel.classList.add('open');
